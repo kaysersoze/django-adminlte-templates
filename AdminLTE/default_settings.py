@@ -4,19 +4,19 @@ from .widgets.sidebar import Sidebar
 
 _DEFAULT_REGISTER_FIELDS = [
     {
-        'name': 'fullname',
+        'name': 'username',
         'type': 'text',
         'placeholder': 'Full Name',
         'glyphicon': 'user',
     },
     {
-        'name': 'username',
-        'type': 'text',
+        'name': 'email',
+        'type': 'email',
         'placeholder': 'Email',
         'glyphicon': 'envelope',
     },
     {
-        'name': 'password',
+        'name': 'password1',
         'type': 'password',
         'placeholder': 'Password',
         'glyphicon': 'lock',
