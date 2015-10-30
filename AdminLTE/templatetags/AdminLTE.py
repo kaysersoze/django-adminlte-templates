@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from django import template
-from django.template.defaultfilters import stringfilter
-from django.contrib.staticfiles.templatetags.staticfiles import static
-
 from os.path import join as pjoin
+
+from django import template
+
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 from ..settings import Settings
 from ..widgets import FontAwesomeIcon, Label
@@ -60,7 +60,7 @@ def alte_load_js(*names):
 
 @register.simple_tag
 def alte_load_skin_css():
-    skinurl = pjoin(adminlte_url_base, 'css/skins/skin-%s.min.css' % Settings['THEME.SKIN'])
+    skinurl = pjoin(adminlte_url_base, 'css/skins/skin-%s.min.css' % Settings.get('THEME.SKIN', "black"))
     return '<link href="%s" rel="stylesheet" type="text/css" />' % skinurl
 
 @register.simple_tag
@@ -95,7 +95,7 @@ def alte_get_img_url(name):
 
 @register.simple_tag(takes_context=True)
 def alte_sidebar(context):
-    sidebar_generator = Settings['SIDEBAR_GENERATOR']
+    sidebar_generator = Settings.get('SIDEBAR_GENERATOR', None)
     if callable(sidebar_generator):
         sidebar = sidebar_generator(context['request'])
         return sidebar.to_html()
@@ -108,3 +108,4 @@ def alte_widget(name, *args, **kwargs):
         return FontAwesomeIcon(*args, **kwargs).to_html()
     elif name == 'label':
         return Label(*args, **kwargs).to_html()
+
