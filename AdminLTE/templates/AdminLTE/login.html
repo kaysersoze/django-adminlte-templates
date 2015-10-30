@@ -17,7 +17,7 @@
         {% if error %}
         <p class="login-box-msg text-red">{{ error }}</p>
         {% endif %}
-        <form action="{{ ALTE.URL_LOGIN.FORM }}" method="{{ ALTE.LOGIN.FORM_METHOD }}">
+        <form action="{{ ALTE.URL.LOGIN_FORM }}" method="{{ ALTE.LOGIN.FORM_METHOD }}">
             {% csrf_token %}
             {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
             <div class="form-group has-feedback">
@@ -57,11 +57,11 @@
         </div><!-- /.social-auth-links -->
         {% endif %}
 
-        {% if ALTE.URL_FORGOT_PASSWORD %}
-        <a href="{{ ALTE.URL_FORGOT_PASSWORD }}">{{ ALTE.LOGIN.FORGOT_PASSWORD_TEXT }}</a><br>
+        {% if ALTE.URL.FORGOT_PASSWORD %}
+        <a href="{{ ALTE.URL.FORGOT_PASSWORD }}">{{ ALTE.LOGIN.FORGOT_PASSWORD_TEXT }}</a><br>
         {% endif %}
-        {% if ALTE.URL_REGISTER %}
-        <a href="{{ ALTE.URL_REGISTER }}" class="text-center">{{ ALTE.LOGIN.REGISTER_TEXT }}</a>
+        {% if ALTE.URL.REGISTER %}
+        <a href="{{ ALTE.URL.REGISTER }}" class="text-center">{{ ALTE.LOGIN.REGISTER_TEXT }}</a>
         {% endif %}
     </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->
