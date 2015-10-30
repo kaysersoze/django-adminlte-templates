@@ -20,13 +20,13 @@ def store_set(store, key, value, only_if_nonexist=False):
     frags = key.split('.')
 
     for frag in frags[:-1]:
-        if store.has_key(frag):
+        if frag in store:
             store = store[frag]
         else:
             store[frag] = dict()
             store = store[frag]
 
-    if only_if_nonexist and store.has_key(frags[-1]):
+    if only_if_nonexist and frags[-1] in store:
         return
     store[frags[-1]] = value
 
