@@ -22,7 +22,7 @@
             {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
             <div class="form-group has-feedback">
                 {% if ALTE.LOGIN.USERNAME_IS_EMAIL %}
-                <input type="email" class="form-control" placeholder="{{ ALTE.LOGIN.USERNAME_PLACEHOLDER }}" name="login" autofocus/>
+                <input type="email" class="form-control" placeholder="{{ ALTE.LOGIN.USERNAME_PLACEHOLDER }}" name="username" autofocus/>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 {% else %}
                 <input type="text" class="form-control" placeholder="{{ ALTE.LOGIN.USERNAME_PLACEHOLDER }}" name="username" autofocus/>

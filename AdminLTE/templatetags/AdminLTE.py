@@ -20,7 +20,7 @@ ionicons_url_base = _ionicons_url_base if _ionicons_url_base else static('ionico
 _adminlte_url_base = Settings.get('STATIC.ADMINLTE_URL_BASE', None)
 adminlte_url_base = _adminlte_url_base if _adminlte_url_base else static('AdminLTE')
 _jquery_url = Settings.get('STATIC.JQUERY_URL', None)
-jquery_url = _jquery_url if _jquery_url else static('AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js')
+jquery_url = _jquery_url if _jquery_url else static('AdminLTE/plugins/jQuery/jQuery-2.2.0.min.js')
 
 @register.simple_tag
 def alte_load_css(*names):

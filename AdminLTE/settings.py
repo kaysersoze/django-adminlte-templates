@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from django.conf import settings as djangosettings
-
 from .widgets.sidebar import Sidebar
 from .default_settings import DEFAULT_SETTINGS
 
@@ -88,7 +86,7 @@ class SettingsBase(object):
 
         # adding extra settings
         cls.set('LOGIN.HAS_SOCIAL', len(cls.get('LOGIN.SOCIALS', []))>0)
-        cls.set('LANGUAGE_CODE', getattr(djangosettings, 'LANGUAGE_CODE', 'en-us'), True)
+        cls.set('LANGUAGE_CODE', 'en-us', True)
 
 class Meta(type):
     def __getitem__(self, key):
