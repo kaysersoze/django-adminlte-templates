@@ -122,7 +122,7 @@ class SidebarMenuItem(SidebarItem):
 
         return ''.join([
             '<li class="%s">' % self.get_li_classes(),
-            '<a href="%s">%s%s%s</a>' % (self.href, self.get_icon(), self.get_name(), self.get_label()),
+            '<a href="%s">%s%s</a> %s' % (self.href, self.get_icon(), self.get_name(), self.get_label()),
             children_html,
             '</li>',
         ])
