@@ -130,7 +130,8 @@ class SidebarMenuItem(SidebarItem):
 class SimpleSidebarMenuItem(SidebarMenuItem):
     def __init__(self, icon=None, icon_color=None, label=None, **kwargs):
         super(SimpleSidebarMenuItem, self).__init__(**kwargs)
-        self.icon = FAIcon(icon, color=icon_color)
+        if icon:
+        	self.icon = FAIcon(icon, color=icon_color)
         self.label = Label(label.get("data"), type=label.get("type"), classes=["pull-right"]) if label else None
 
 class SidebarSearchForm(SidebarItem):
